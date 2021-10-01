@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/p5.dom.js"></script>
+
+  <script src="sketch.js"></script>
+  <script src="EventSubscription.js"></script>
+  <!-- add extra scripts below -->
+  <script src="toolbox.js"></script>
+  <script src="colourPalette.js"></script>
+  <script src="helperFunctions.js"></script>
+
+  <script src="freehandTool.js"></script>
+  <script src="lineToTool.js"></script>
+  <script src="mirrorDrawTool.js"></script>
+  <script src="textBox.js"></script>
+  <script src="ruler.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="box header">My Drawing App
+
+      <button id="clearButton" onclick="clearCanvas()">Clear</button>
+      <button id="saveImageButton">Save Image</button>
+      <button id="rotateLeft" hidden><b>&#8630;</b></button>
+      <button id="rotateRight" hidden><b>&#8631;</b></button>
+    </div>
+    <div class="box" id="sidebar"></div>
+    <div id="content"></div>
+    <div class="box colourPalette"></div>
+    <div class="box options"></div>
+
+    <script>
+      function clearCanvas() {
+        var el = document.getElementById('defaultCanvas0')
+        el.getContext('2d').clearRect(0, 0, el.width, el.height)
+      }
+    </script>
+  </div>
+</body>
+
+</html>
